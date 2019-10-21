@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Link to Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Link to Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title> Train Schedule</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="row">
+        <h1> <i class="large material-icons">train</i>Any time is train time</h1>
+    </div>
+    <hr>
+
+    <div class="container" id="container">
+
+        <!-- Current Train Schedule -->
+
+        <div class="row">
+
+            <table class="table">
+                <h5> CURRENT TRAIN SCHEDULE </h5>
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">TRAIN NAME</th>
+                        <th scope="col">DESTINATION</th>
+                        <th scope="col">FREQUENCY (min)</th>
+                        <th scope="col">NEXT ARRIVAL</th>
+                        <th scope="col">MINUTES AWAY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+        <!-- Add Train Form -->
+    <div class="container">
+    <h6> Add Train</h6>
+        <div class="row">
+
+            <div class="row">
+                <div class="col s12">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="tyny material-icons prefix">train</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Train Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">edit_location</i>
+                                <input id="icon_telephone" type="tel" class="validate">
+                                <label for="icon_telephone">Destination</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">access_time</i>
+                                <input id="icon_telephone" type="tel" class="validate">
+                                <label for="icon_telephone">First Train Time HH:mm</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">history</i>
+                                <input id="icon_telephone" type="tel" class="validate">
+                                <label for="icon_telephone">Frequency</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col s1">
+                <a class="waves-effect waves-light btn">SUBMIT</a>
+                </div>
+                <div class="col s11"></div>
+        </div>
+
+
+    </div>
+
+</body>
+
+<script>
+
+    // Have the firebase linked to the code
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCAm6IIBGNmaL2sFr5pevhBLTXGxn3Y51Y",
+        authDomain: "trainschedule-e908f.firebaseapp.com",
+        databaseURL: "https://trainschedule-e908f.firebaseio.com",
+        projectId: "trainschedule-e908f",
+        storageBucket: "trainschedule-e908f.appspot.com",
+        messagingSenderId: "1019294391290",
+        appId: "1:1019294391290:web:2eda389ffe2d936d986243"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,15 @@
+h1 {
+    margin-top:10px;
+    text-align: center;
+    height: 100px;
+    width: 1700px;
+    background: orange;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
