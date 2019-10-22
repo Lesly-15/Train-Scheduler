@@ -5,15 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <!-- Link to Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     <!-- Link to Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- My own css -->
     <link rel="stylesheet" href="css/style.css">
+   
+    <!-- Link to firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-database.js"></script>
+
+    <!-- Link to JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
+    <!-- Link to Moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
     <title> Train Schedule</title>
+
 </head>
 
 <body>
@@ -66,24 +81,22 @@
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="tyny material-icons prefix">train</i>
-                                <input id="icon_prefix" type="text" class="validate">
-                                <label for="icon_prefix">Train Name</label>
+                                <input type="text" placeholder="Train Name" id="TrainNameInput">
+                                
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">edit_location</i>
-                                <input id="icon_telephone" type="tel" class="validate">
-                                <label for="icon_telephone">Destination</label>
+                                <input type="text" placeholder= "Destination" id="TrainDestinationInput">
                             </div>
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">access_time</i>
-                                <input id="icon_telephone" type="tel" class="validate">
-                                <label for="icon_telephone">First Train Time HH:mm</label>
+                                <i class="material-icons prefix">alarm</i>
+                                <input type="text" placeholder= "First Train Time (HH:mm)" id="TrainFisrtTimeInput">
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">history</i>
-                                <input id="icon_telephone" type="tel" class="validate">
-                                <label for="icon_telephone">Frequency</label>
+                                <input type="text" placeholder= "Frequency (min)" id="TrainFrequencyInput">
                             </div>
+                            
                         </div>
                     </form>
                 </div>
@@ -91,7 +104,7 @@
         </div>
         <div class="row">
                 <div class="col s1">
-                <a class="waves-effect waves-light btn">SUBMIT</a>
+                <a class="waves-effect waves-light btn" id="addTrainBtn">SUBMIT</a>
                 </div>
                 <div class="col s11"></div>
         </div>
@@ -101,24 +114,6 @@
 
 </body>
 
-<script>
-
-    // Have the firebase linked to the code
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyCAm6IIBGNmaL2sFr5pevhBLTXGxn3Y51Y",
-        authDomain: "trainschedule-e908f.firebaseapp.com",
-        databaseURL: "https://trainschedule-e908f.firebaseio.com",
-        projectId: "trainschedule-e908f",
-        storageBucket: "trainschedule-e908f.appspot.com",
-        messagingSenderId: "1019294391290",
-        appId: "1:1019294391290:web:2eda389ffe2d936d986243"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-
-
-
-</script>
+<script src="script.js"></script>
 
 </html>
