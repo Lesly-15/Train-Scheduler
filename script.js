@@ -14,6 +14,9 @@
 
     var database = firebase.database();
 
+    var time = moment().format('h:mm:ss a');
+    $("#clock").text(time);
+
     // Submit button to add trains
 
     $("#addTrainBtn").on("click", function(event) {
@@ -46,7 +49,45 @@
         
             // Uploads trains to firebase
             database.ref().push(newTrains);
-    });
+           
+            // Empty inputs
+            $("#TrainNameInput").val("");
+            $("#TrainDestinationInput").val("");
+            $("#TrainFisrtTimeInput").val("");
+            $("#TrainFrequencyInput").val("");
+
+            database.ref().on("child_added", function(childSnapshot) {
+                console.log(childSnapshot.val());
+        
+                var newTrainName = childSnapshot.val().name;
+                var newTrainDestination = childSnapshot.val().destination;
+                var newTrainFirstTime = childSnapshot.val().firstTime;
+                var newTrainFrequency = childSnapshot.val().frequency;
+                
+                console.log(newTrainName);
+                console.log(newTrainDestination);
+                console.log(newTrainFirstTime)
+                console.log(newTrainFrequency)
+            
+              //Math of the train times
+              var nextArrival= time + newTrainFrequency;
+              var minutesAway= nextArrival - time;
+                
+              // Create the new row
+                var newRow = $("<tr>").append(
+                  $("<td>").text(newTrainName),
+                  $("<td>").text(newTrainDestination),
+                  $("<td>").text(newTrainFrequency),
+                  $("<td>").text(nextArrival),
+                  $("<td>").text(minutesAway),
+                );
+              // Append the new row to the table
+                  $("#trainScheduleTable > tbody").append(newRow);
+                });
+        
+            });
+
+
 
 
 
