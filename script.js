@@ -28,6 +28,27 @@
         console.log(newTrainDestination);
         console.log(newTrainFirstTime);
         console.log(newTrainFrequency);
+
+      // Variables to store the temporary info from the train-form inputs
+
+        var newTrains = {
+      
+            name: newTrainName,
+            destination: newTrainDestination,
+            firstTime: newTrainFirstTime,
+            frequency: newTrainFrequency,
+          };
+        
+          console.log(newTrains.name);
+          console.log(newTrains.destination);
+          console.log(newTrains.firstTime);
+          console.log(newTrains.frequency);
+        
+            // Uploads trains to firebase
+            database.ref().push(newTrains);
     });
+
+
+
 
 
